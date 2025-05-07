@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\GarmentController;
 
+Route::get('ping', fn() => response('pong'));
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('garments', GarmentController::class);
 });
