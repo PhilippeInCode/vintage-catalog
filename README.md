@@ -7,12 +7,11 @@
 ## 📌 **Table of Contents**
 1. [⚙️ Installation and Requirements](#installation-and-requirements)
 2. [🎨 App Design](#-app-design)
-3. [🏗️ Project Architecture](#project-architecture)
-4. [💻 Technologies Used](#-technologies-used) 
-5. [🧪 Test Screenshots](#-test-screenshots)
-6. [🚀 Next Steps](#-next-steps)
-7. [🔍 Preview](#-preview)
-9. [🔖 License](#-license)
+3. [💻 Technologies Used](#-technologies-used) 
+4. [🧪 Test Screenshots](#-test-screenshots)
+5. [🚀 Next Steps](#-next-steps)
+6. [🔍 Preview](#-preview)
+7. [🔖 License](#-license)
 
 ---
 
@@ -79,3 +78,37 @@
     Start the Laravel development server:
     ```bash
     php artisan serve
+
+---
+
+## 🎨 App Design <a name="-app-design"></a>
+
+---
+
+## 💻 Technologies Used <a name="-technologies-used"></a>
+
+- **Language & Framework**: PHP 8, Laravel 10  
+- **Authentication**: Laravel Sanctum  
+- **Database**: MySQL (via XAMPP)  
+- **Frontend**: Blade, HTML5, CSS3, JavaScript (ES6+)  
+- **Build Tools**: Composer, npm, Laravel Mix  
+- **Version Control**: Git, GitHub  
+- **IDE Support**: Intelephense for VSCode
+
+---
+
+## 🧪 Test Screenshots <a name="-test-screenshots"></a>
+
+---
+
+## 🚀 Next Steps <a name="-next-steps"></a>
+
+---
+
+## 🔍 Preview <a name="-preview"></a>
+
+---
+
+## 🔖 License <a name="-license"></a>
+
+This project is licensed under the MIT License © Vintage-Catalog.
