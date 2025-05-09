@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('garments', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('origin_country')->nullable();
+            $table->integer('production_year')->nullable();
+            $table->string('production_period')->nullable();
+            $table->enum('usage_type', ['military','formal','work','sport']);
+            $table->integer('usage_year')->nullable();
+            $table->string('used_country')->nullable();
+            $table->text('materials')->nullable();
             $table->timestamps();
         });
     }

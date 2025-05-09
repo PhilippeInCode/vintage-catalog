@@ -13,8 +13,18 @@ return new class extends Migration
     {
         Schema::create('pending_garments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')
+                  ->constrained('users')
+                  ->onDelete('cascade');
+            $table->foreignId('garment_id')
+                  ->constrained('garments')
+                  ->onDelete('cascade');
+            $table->enum('status', ['pending','approved','rejected'])
+                  ->default('pending');
+            $table->timestamp('submitted_at')
+                  ->useCurrent();
         });
+        
     }
 
     /**

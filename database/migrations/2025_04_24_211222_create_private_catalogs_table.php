@@ -11,10 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('private_catalogs', function (Blueprint $table) {
+        Schema::create('private_catalog', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                  ->constrained('users')
+                  ->onDelete('cascade');
+            $table->foreignId('garment_id')
+                  ->constrained('garments')
+                  ->onDelete('cascade');
             $table->timestamps();
+            $table->unique(['user_id','garment_id']);
         });
+        
     }
 
     /**
