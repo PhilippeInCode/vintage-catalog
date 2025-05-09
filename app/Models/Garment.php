@@ -18,7 +18,6 @@ class Garment extends Model
         'materials',
     ];
 
-    // Relaciones
     public function photos()
     {
         return $this->hasMany(Photo::class);

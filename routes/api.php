@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\GarmentController;
+use App\Http\Controllers\API\PendingGarmentController;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('garments', GarmentController::class);
@@ -14,4 +15,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('garments',           [GarmentController::class, 'store']);
     Route::put('garments/{garment}',  [GarmentController::class, 'update']);
     Route::delete('garments/{garment}', [GarmentController::class, 'destroy']);
+});
+
+Route::post('pending-garments', [PendingGarmentController::class, 'store']);
+
+Route::middleware(['auth:sanctum','admin'])->group(function () {
+    Route::post('pending-garments/{id}/approve', [PendingGarmentController::class, 'approve']);
+    Route::post('pending-garments/{id}/reject',  [PendingGarmentController::class, 'reject']);
 });
