@@ -1,5 +1,4 @@
 <?php
-// app/Http/Controllers/API/PendingGarmentController.php
 
 namespace App\Http\Controllers\API;
 
@@ -8,41 +7,7 @@ use App\Http\Requests\StorePendingGarmentRequest;
 use App\Models\PendingGarment;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
-
-class PendingGarmentController extends Controller
-{
-    public function __construct()
-    {
-        $this->middleware('auth:sanctum');
-    }
-
-    /**
-     * POST /api/pending-garments
-     */
-    public function store(StorePendingGarmentRequest $request)
-    {
-        $data = $request->validated();
-        $data['user_id']      = Auth::id();
-        $data['status']       = 'pending';
-        $data['submitted_at'] = now();
-
-        $pending = PendingGarment::create($data);
-
-        return response()->json($pending, Response::HTTP_CREATED);
-    }
-}
-
-<?php
-
-namespace App\Http\Controllers\API;
-
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePendingGarmentRequest;
-use App\Models\PendingGarment;
-use App\Models\Garment;                 
-use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\Response;
-
+use App\Models\Garment;
 class PendingGarmentController extends Controller
 {
     public function __construct()
@@ -61,6 +26,7 @@ class PendingGarmentController extends Controller
 
         return response()->json($pending, Response::HTTP_CREATED);
     }
+
 
     public function approve($id)
 {
