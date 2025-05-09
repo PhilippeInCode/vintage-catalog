@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\LikeController;
 use App\Http\Controllers\API\PrivateCatalogController;
+use App\Http\Controllers\API\GarmentController;
+use App\Http\Controllers\API\PendingGarmentController;
 
 Route::middleware('auth:sanctum')->group(function () {
 
