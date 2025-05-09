@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class PendingGarment extends Model
 {
+    protected $table = 'pending_garments';
+
+    public $timestamps = false;
+
+
     protected $fillable = [
         'user_id',
         'garment_id',
@@ -13,8 +18,6 @@ class PendingGarment extends Model
         'submitted_at',
     ];
 
-    public $timestamps = false; 
-    
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -25,3 +28,4 @@ class PendingGarment extends Model
         return $this->belongsTo(Garment::class);
     }
 }
+

@@ -5,6 +5,7 @@ use App\Http\Controllers\API\LikeController;
 use App\Http\Controllers\API\PrivateCatalogController;
 use App\Http\Controllers\API\GarmentController;
 use App\Http\Controllers\API\PendingGarmentController;
+use App\Http\Controllers\API\PhotoController;
 
 Route::middleware('auth:sanctum')->group(function () {
 
@@ -35,3 +36,13 @@ Route::middleware(['auth:sanctum','admin'])->group(function () {
     Route::post('pending-garments/{id}/approve', [PendingGarmentController::class, 'approve']);
     Route::post('pending-garments/{id}/reject',  [PendingGarmentController::class, 'reject']);
 });
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post   ('photos',           [PhotoController::class, 'store']);
+    Route::delete ('photos/{photo}',   [PhotoController::class, 'destroy']);
+});
+
+Route::middleware('auth:sanctum')->post(
+    'pending-garments',
+    [PendingGarmentController::class, 'store']
+);

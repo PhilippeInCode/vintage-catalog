@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class StorePendingGarmentRequest extends FormRequest
 {
+    /**
+     * Determine if the user is authorized to make this request.
+     */
     public function authorize(): bool
     {
         return Auth::check();
@@ -26,8 +29,8 @@ class StorePendingGarmentRequest extends FormRequest
             'usage_year'         => ['nullable', 'integer', 'min:1900', "max:{$currentYear}"],
             'used_country'       => ['nullable', 'string', 'max:100'],
             'materials'          => ['nullable', 'string'],
-            'photos'       => ['required', 'array', 'min:1', 'max:10'],
-            'photos.*'     => ['required', 'url'],
+            'photos'             => ['required', 'array', 'min:1', 'max:10'],
+            'photos.*'           => ['required', 'url'],
         ];
     }
 }
