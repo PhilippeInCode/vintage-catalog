@@ -22,3 +22,5 @@ class Like extends Model
         return $this->belongsTo(Garment::class);
     }
 }
+    protected $fillable = ['user_id','garment_id'];
+}

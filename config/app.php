@@ -42,7 +42,7 @@ return [
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     */
-    'locale'          => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'en'),
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
     'faker_locale'    => env('APP_FAKER_LOCALE', 'en_US'),
 
@@ -72,6 +72,8 @@ return [
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
+    |
+    |
     */
     'providers' => [
 
@@ -106,6 +108,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
     ],
 
     /*
@@ -140,3 +143,4 @@ return [
     ],
 
 ];
+    
