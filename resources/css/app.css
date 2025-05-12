@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rounded-tl-br {
+  border-top-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+}
+
+.rounded-tl-br-inverse {
+    border-top-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+}

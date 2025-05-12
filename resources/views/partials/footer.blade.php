@@ -10,8 +10,7 @@
       </p>
     </div>
 
-    <nav class="flex flex-col space-y-2 text-base font-semibold md:text-center">
-      <a href="{{ url('/about') }}" class="hover:underline">Sobre nosotros</a>
+    <nav class="flex flex-col space-y-2 text-base font-semibold md:text-center mt-12">
       <a href="{{ url('/terms') }}" class="hover:underline">Términos y condiciones</a>
     </nav>
 
