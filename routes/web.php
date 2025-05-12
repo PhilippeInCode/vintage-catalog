@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/test-header', 'test-header-full');
 
+Route::view('/test-footer', 'test-footer-full');
+
 Route::get('/', function () {
     return view('welcome');
 });
