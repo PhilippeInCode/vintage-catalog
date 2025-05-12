@@ -61,14 +61,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    public function likes()
-    {
-        return $this->belongsToMany(Garment::class, 'likes');
-    }
-
-    public function privateCatalog()
-    {
-        return $this->belongsToMany(Garment::class, 'private_catalog');
-    }
 }
