@@ -1,6 +1,6 @@
 <header class="bg-brown px-6 py-4 flex items-center justify-between font-sans bg-brown-600 text-ivory">
 
-      <a href="{{ url('/welcome') }}">
+      <a href="{{ url('/') }}">
         <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" alt="Logo" class="h-10">
       </a>
 
