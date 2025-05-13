@@ -1,9 +1,5 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="text-xl font-bold">Panel de Administrador</h2>
-    </x-slot>
+@extends('layouts.internal')
 
-    <div class="p-4">
-        Hola, {{ Auth::user()->name }}. Este es tu panel de administrador.
-    </div>
-</x-app-layout>
+@section('content')
+    <h1 class="text-xl mb-4">Bienvenido, {{ Auth::user()->name }}. Este es tu panel de administrador.</h1>
+@endsection
