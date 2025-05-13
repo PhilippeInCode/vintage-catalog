@@ -2,14 +2,27 @@
 
 namespace App\Http;
 
-use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;  
 
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
     ];
 
     protected $middlewareGroups = [
+        'web' => [
+/*        \Illuminate\Cookie\Middleware\EncryptCookies::class,
+ */        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+/*         \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+ */        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -21,5 +34,6 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin'    => \App\Http\Middleware\IsAdmin::class,
+        'redirect.role' => \App\Http\Middleware\RedirectIfAuthenticatedWithRole::class,
     ];
 }
