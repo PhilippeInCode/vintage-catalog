@@ -5,8 +5,8 @@
         <div class="bg-beige px-6 py-8">
             <div class="flex flex-col items-center">
                 <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" class="h-12 mb-2" alt="Vintage Catalog logo">
-                <h1 class="text-2xl font-bold text-brown mb-5">Login</h1>
-                <p class="text-sm text-gray-700 mt-1 text-center">¡Bienvenido de nuevo! <br>Por favor, logeate para acceder a tu cuenta.</br></p>
+                <h1 class="text-2xl font-bold text-brown mb-5">Inicio sesión</h1>
+                <p class="text-sm text-gray-700 mt-1 text-center">¡Bienvenido de nuevo! <br>Por favor, inicia sesión para acceder a tu cuenta.</br></p>
             </div>
         </div>
 
@@ -39,7 +39,7 @@
 
                 <div class="mt-6">
                     <x-primary-button class="w-full justify-center">
-                        {{ __('Log in') }}
+                        {{ __('Iniciar sesión') }}
                     </x-primary-button>
                 </div>
             </form>

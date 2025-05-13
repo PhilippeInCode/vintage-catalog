@@ -11,9 +11,13 @@
         </div>
 
         <div class="px-6 py-6">
-            <div class="mb-4 text-sm text-gray-600">
-                {{ __('¿Has olvidado tu contraseña? No te preocupes. Solo dinos tu dirección de correo electrónico y te enviaremos un enlace para restablecerla.') }}
-            </div>
+            <p class="mb-3 text-sm text-gray-600">
+                ¿Has olvidado tu contraseña?
+            </p>
+
+            <p class="mb-4 text-sm text-gray-600">
+                No te preocupes, tan solo escribe tu dirección de correo electrónico y te enviaremos un enlace para restablecerla.
+            </p>
 
             <!-- Session Status -->
             <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -29,7 +33,7 @@
 
                 <div class="mt-6">
                     <x-primary-button class="w-full justify-center">
-                        {{ __('Enviar enlace restauración') }}
+                        {{ __('Enviar enlace') }}
                     </x-primary-button>
                 </div>
             </form>
