@@ -10,11 +10,11 @@
     </div>
 
     <div class="flex items-center space-x-4 text-sm">
-        <a href="{{ Auth::user()->role === 'admin' ? route('admin.dashboard') : route('user.dashboard') }}" class="hover:underline">Dashboard</a>
-        <a href="{{ route('profile.edit') }}" class="hover:underline">Profile</a>
+        <a href="{{ Auth::user()->role === 'admin' ? route('admin.dashboard') : route('user.dashboard') }}" class="hover:underline">Panel de control</a>
+        <a href="{{ route('profile.edit') }}" class="hover:underline">Perfil</a>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="hover:underline">Logout</button>
+            <button type="submit" class="hover:underline">Cerrar sesión</button>
         </form>
     </div>
 </header>
