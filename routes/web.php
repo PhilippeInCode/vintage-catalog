@@ -2,20 +2,30 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 
 Route::middleware('web')->group(function () {
 
-    Route::view('/test-header', 'test-header-full');
-    Route::view('/test-footer', 'test-footer-full');
-    Route::view('/test-hero', 'test-hero-full');
-    Route::view('/test-vintage', 'test-vintage-full');
-    Route::view('/test-values', 'test-values-full');
-    Route::view('/test-catalog', 'test-catalog-full');
-    Route::view('/test-cta', 'test-cta-full');
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-    Route::get('/', fn () => view('welcome'));
+    Route::get('/dashboard', function () {
+        if (Auth::check()) {
+            return redirect()->route(
+                Auth::user()->role === 'admin' ? 'admin.dashboard' : 'user.dashboard'
+            );
+        }
+        return redirect()->route('login');
+    })->middleware('auth')->name('dashboard');
 
-    Route::get('/dashboard', fn () => 'Autenticado correctamente')->middleware('auth')->name('dashboard');
+    Route::middleware('auth')->get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+
+    Route::middleware('auth')->get('/user/dashboard', function () {
+        return view('user.dashboard');
+    })->name('user.dashboard');
 
     Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,7 +38,6 @@ Route::middleware('web')->group(function () {
     Route::get('/about', fn () => view('about'))->name('about');
     Route::get('/contact', fn () => view('contact'))->name('contact');
     Route::get('/terms', fn () => view('terms'))->name('terms');
-
 });
 
 require __DIR__.'/auth.php';

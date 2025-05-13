@@ -1,6 +1,9 @@
-{{-- user/dashboard.blade.php --}}
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="text-xl font-bold">Panel de Usuario</h2>
+    </x-slot>
 
-@section('content')
-    <h1>User Dashboard</h1>
-@endsection
+    <div class="p-4">
+        Bienvenido, {{ Auth::user()->name }}. Estás en tu panel de usuario.
+    </div>
+</x-app-layout>

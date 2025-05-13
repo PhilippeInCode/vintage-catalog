@@ -3,12 +3,6 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;  
-
-use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
-use Illuminate\Session\Middleware\StartSession;
-use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
@@ -16,12 +10,12 @@ class Kernel extends HttpKernel
 
     protected $middlewareGroups = [
         'web' => [
-/*        \Illuminate\Cookie\Middleware\EncryptCookies::class,
- */        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-        \Illuminate\Session\Middleware\StartSession::class,
-        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-/*         \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
- */        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+          \Illuminate\Cookie\Middleware\EncryptCookies::class,
+           \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+              \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+               \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ],
         'api' => [
             'throttle:api',

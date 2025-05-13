@@ -1,6 +1,9 @@
-{{-- admin/dashboard.blade.php --}}
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="text-xl font-bold">Panel de Administrador</h2>
+    </x-slot>
 
-@section('content')
-    <h1>Admin Dashboard</h1>
-@endsection
+    <div class="p-4">
+        Hola, {{ Auth::user()->name }}. Este es tu panel de administrador.
+    </div>
+</x-app-layout>
