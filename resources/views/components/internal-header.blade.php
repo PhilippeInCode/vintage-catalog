@@ -9,7 +9,7 @@
         </span>
     </div>
 
-    <div class="flex items-center space-x-4 text-sm">
+    <div class="flex items-center space-x-14 text-xl">
         <a href="{{ Auth::user()->role === 'admin' ? route('admin.dashboard') : route('user.dashboard') }}" class="hover:underline">Panel de control</a>
         <a href="{{ route('profile.edit') }}" class="hover:underline">Perfil</a>
         <form method="POST" action="{{ route('logout') }}">
