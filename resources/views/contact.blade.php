@@ -10,10 +10,49 @@
 
     @include('partials.header')
 
-    <main class="px-6 py-10">
-        <h1 class="text-3xl font-bold mb-4">Contacto</h1>
-        <p class="text-lg">Aquí se mostrará la página de contacto.</p>
+    <main class="flex flex-col items-center px-6 py-14 text-center max-w-xl mx-auto">
+        <h1 class="text-4xl font-serif font-bold tracking-wide mb-6">CONTACTO</h1>
+
+        <p class="text-md text-gray-800 mb-10 leading-relaxed">
+            Para cualquier consulta o contactar con nosotros, puedes hacerlo a través del siguiente formulario
+        </p>
+
+        <form action="#" method="POST" class="w-full space-y-6">
+            @csrf
+
+            <div class="text-left">
+                <label for="name" class="block text-sm font-medium mb-1">Nombre:</label>
+                <input type="text" name="name" id="name" class="w-full px-4 py-2 rounded-full bg-ivory text-gray-900 focus:outline-none focus:ring-2 focus:ring-brown" required>
+            </div>
+
+            <div class="text-left">
+                <label for="email" class="block text-sm font-medium mb-1">Email:</label>
+                <input type="email" name="email" id="email" class="w-full px-4 py-2 rounded-full bg-ivory text-gray-900 focus:outline-none focus:ring-2 focus:ring-brown" required>
+            </div>
+
+            <div class="relative text-left">
+                <label for="message" class="block text-sm font-medium mb-1">Mensaje:</label>
+                    <textarea name="message" id="message" maxlength="500" rows="5"
+                        class="w-full px-4 py-2 pr-16 rounded-lg bg-ivory text-gray-900 resize-none focus:outline-none focus:ring-2 focus:ring-brown"
+                        oninput="updateCounter()"></textarea>
+                    <span id="charCount" class="absolute bottom-3 right-3 text-xs text-gray-600 pointer-events-none">0/500</span>
+            </div>
+
+            <div>
+                <button type="submit" class="bg-brown text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition duration-300">Enviar</button>
+            </div>
+        </form>
     </main>
+
+    @include('partials.footer')
+
+    <script>
+        function updateCounter() {
+            const textarea = document.getElementById('message');
+            const counter = document.getElementById('charCount');
+            counter.textContent = `${textarea.value.length}/500`;
+        }
+    </script>
 
 </body>
 </html>
