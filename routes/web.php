@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminGarmentController;
+use App\Http\Controllers\GarmentController;
 
 Route::middleware('web')->group(function () {
 
@@ -23,6 +25,20 @@ Route::middleware('web')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
+    Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', fn () => view('admin.dashboard'))->name('dashboard');
+
+    Route::get('/garments/create', [AdminGarmentController::class, 'create'])->name('garments.create');
+    Route::post('/garments', [AdminGarmentController::class, 'store'])->name('garments.store');
+
+    Route::get('/garments/edit', [AdminGarmentController::class, 'editMode'])->name('garments.editMode');
+    Route::get('/garments/{id}/edit', [AdminGarmentController::class, 'edit'])->name('garments.edit');
+    Route::put('/garments/{id}', [AdminGarmentController::class, 'update'])->name('garments.update');
+
+    Route::get('/garments/delete', [AdminGarmentController::class, 'deleteMode'])->name('garments.deleteMode');
+    Route::delete('/garments', [AdminGarmentController::class, 'destroySelected'])->name('garments.destroySelected');
+    });
+
     Route::middleware('auth')->get('/user/dashboard', function () {
         return view('user.dashboard');
     })->name('user.dashboard');
@@ -33,7 +49,7 @@ Route::middleware('web')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    Route::get('/garments', fn () => view('garments'))->name('garments');
+    Route::get('/garments', [GarmentController::class, 'index'])->name('garments');
     Route::get('/values', fn () => view('values'))->name('values');
     Route::get('/about', fn () => view('about'))->name('about');
     Route::get('/contact', fn () => view('contact'))->name('contact');

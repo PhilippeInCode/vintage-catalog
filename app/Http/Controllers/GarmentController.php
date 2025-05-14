@@ -7,59 +7,19 @@ use Illuminate\Http\Request;
 
 class GarmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $garments = Garment::with('photos')->get();
+        $deleteMode = $request->query('mode') === 'delete';
+        $editMode = $request->query('mode') === 'edit';
+
+        return view('garments', compact('garments', 'deleteMode', 'editMode'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Garment $garment)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Garment $garment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Garment $garment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Garment $garment)
-    {
-        //
-    }
+    public function create() {}
+    public function store(Request $request) {}
+    public function show(Garment $garment) {}
+    public function edit(Garment $garment) {}
+    public function update(Request $request, Garment $garment) {}
+    public function destroy(Garment $garment) {}
 }
