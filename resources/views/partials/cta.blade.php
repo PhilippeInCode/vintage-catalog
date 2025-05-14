@@ -19,10 +19,13 @@
           <input type="email" id="email" name="email" class="w-full rounded-md border border-black px-4 py-2 bg-ivory focus:outline-none" required>
         </div>
 
-        <div>
-          <label for="message" class="block text-sm font-medium mb-1">Mensaje:</label>
-          <textarea id="message" name="message" rows="4" class="w-full rounded-md border border-black px-4 py-2 bg-ivory focus:outline-none" required></textarea>
-        </div>
+        <div class="relative text-left">
+              <label for="message" class="block text-sm font-medium mb-1">Mensaje:</label>
+                  <textarea name="message" id="message" maxlength="500" rows="5"
+                      class="w-full px-4 py-2 pr-16 rounded-lg bg-ivory text-gray-900 resize-none focus:outline-none focus:ring-2 focus:ring-brown"
+                      oninput="updateCounter()"></textarea>
+                  <span id="charCount" class="absolute bottom-3 right-3 text-xs text-gray-600 pointer-events-none">0/500</span>
+          </div>
 
         <div class="flex justify-center">
             <button type="submit" class="bg-brown text-ivory px-6 py-2 rounded-full hover:bg-brown/80 transition">
@@ -41,4 +44,13 @@
       ¡Tus aportaciones complementan esta comunidad!
     </p>
   </div>
+
+    <script>
+        function updateCounter() {
+            const textarea = document.getElementById('message');
+            const counter = document.getElementById('charCount');
+            counter.textContent = `${textarea.value.length}/500`;
+        }
+    </script>
+
 </section>
