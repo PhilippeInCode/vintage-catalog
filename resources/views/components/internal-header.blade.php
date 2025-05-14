@@ -14,7 +14,7 @@
         <a href="{{ route('profile.edit') }}" class="hover:underline">Perfil</a>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="hover:underline">Cerrar sesión</button>
+            <button type="submit" class="h-10 px-6 flex items-center justify-center rounded-full bg-ivory text-brown border border-brown hover:bg-beige transition">Cerrar sesión</button>
         </form>
     </div>
 </header>
