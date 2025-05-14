@@ -29,15 +29,17 @@
           class="px-4 py-2 rounded-r-full bg-orange font-bold text-brown hover:bg-beige transition"
         >OK</button>
       </form>
-      <a href="https://instagram.com/tu_cuenta" target="_blank" class="mt-2">
+      <a href="#" target="_blank" class="mt-2">
         <img src="{{ asset('https://download.logo.wine/logo/Instagram/Instagram-Logo.wine.png') }}" alt="Instagram" class="h-10 w-15">
       </a>
     </div>
   </div>
 
-  <div class="border-t border-beige">
+   <div class="border-t border-beige">
     <p class="text-center text-xs py-4">
-      &copy; Vintage Catalog {{ date('Y') }}. Todos los derechos reservados.
+      <a href="https://github.com/PhilippeInCode" target="_blank" class="hover:underline font-semibold block">
+        @PhilippeInCode
+      </a> <br> &copy; Vintage Catalog {{ date('Y') }}. Todos los derechos reservados.</br>
     </p>
   </div>
 </footer>
