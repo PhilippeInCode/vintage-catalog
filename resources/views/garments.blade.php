@@ -5,19 +5,36 @@
     <title>Catálogo</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" type="image/x-icon">
+
+    {{-- SweetAlert2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-beige text-gray-900 antialiased">
 
 @if(session('success'))
-    <div class="bg-green-200 text-green-800 px-4 py-2 rounded mb-4 text-center">
-        {{ session('success') }}
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: '{{ session('success') }}',
+                confirmButtonColor: '#3085d6'
+            });
+        });
+    </script>
 @endif
 
 @if(session('error'))
-    <div class="bg-red-200 text-red-800 px-4 py-2 rounded mb-4 text-center">
-        {{ session('error') }}
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}',
+                confirmButtonColor: '#d33'
+            });
+        });
+    </script>
 @endif
 
 @include('partials.header')
@@ -30,11 +47,10 @@
         @csrf
         @method('DELETE')
 
-        {{-- BOTONES --}}
         <div class="text-center mb-6">
             @if (!empty($deleteMode) && $deleteMode)
-                <button type="submit"
-                        onclick="return confirm('¿Estás seguro de que quieres eliminar las prendas seleccionadas?')"
+                <button type="button"
+                        onclick="confirmDelete()"
                         class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
                     Eliminar seleccionadas
                 </button>
@@ -50,7 +66,6 @@
             @endif
         </div>
 
-        {{-- TARJETAS --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($garments as $garment)
                 <div class="relative bg-[#FDF7F1] border border-[#F1E3D3] rounded-xl p-4 shadow hover:scale-105 transition duration-300 ease-in-out">
@@ -87,6 +102,7 @@
     </form>
 </main>
 
+{{-- Scripts --}}
 @if (!empty($editMode) && $editMode)
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -99,13 +115,8 @@
                     if (other !== cb) other.checked = false;
                 });
 
-                // Muestra el botón solo si uno está seleccionado
                 const selected = document.querySelector('.single-edit-checkbox:checked');
-                if (selected) {
-                    editBtn.classList.remove('hidden');
-                } else {
-                    editBtn.classList.add('hidden');
-                }
+                editBtn.classList.toggle('hidden', !selected);
             });
         });
     });
@@ -113,13 +124,51 @@
     function redirectToEdit() {
         const selected = document.querySelector('.single-edit-checkbox:checked');
         if (!selected) {
-            alert('Por favor, selecciona una prenda para editar.');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Atención',
+                text: 'Por favor, selecciona una prenda para editar.',
+                confirmButtonColor: '#3085d6'
+            });
             return;
         }
 
         const id = selected.value;
         const url = "{{ route('admin.garments.edit', '__ID__') }}".replace('__ID__', id);
         window.location.href = url;
+    }
+</script>
+@endif
+
+@if (!empty($deleteMode) && $deleteMode)
+<script>
+    function confirmDelete() {
+        const selected = document.querySelectorAll('input[name="garment_ids[]"]:checked');
+
+        if (selected.length === 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Nada seleccionado',
+                text: 'Debes seleccionar al menos una prenda para eliminar.',
+                confirmButtonColor: '#d33'
+            });
+            return;
+        }
+
+        Swal.fire({
+            title: '¿Eliminar prendas seleccionadas?',
+            text: 'Esta acción no se puede deshacer.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#aaa',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('deleteForm').submit();
+            }
+        });
     }
 </script>
 @endif

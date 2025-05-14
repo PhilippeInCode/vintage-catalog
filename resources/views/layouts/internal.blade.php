@@ -5,13 +5,12 @@
     <title>{{ config('app.name', 'Vintage Catalog') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-gray-100 font-sans antialiased">
 
-    {{-- Header personalizado para usuarios autenticados --}}
     @include('components.internal-header')
 
-    {{-- Contenido dinámico --}}
     <main class="p-4">
         @yield('content')
     </main>
