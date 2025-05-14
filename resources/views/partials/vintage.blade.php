@@ -1,7 +1,7 @@
 <section class=" text-black py-16 px-4 font-sans">
 
-    <div class="text-left mb-8">
-      <h2 class="text-2xl md:text-3xl font-semibold inline-block border-b-2 border-brown mb-6">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-5xl font-semibold inline-block border-b-2 border-brown mb-6">
         ¿Qué es la moda vintage?
       </h2>
     </div>

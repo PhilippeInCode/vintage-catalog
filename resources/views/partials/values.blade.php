@@ -1,6 +1,6 @@
 <section class="text-black py-16 px-4 font-sans">
   <div class="bg-orange px-6 py-12 max-w-7xl mx-auto text-center rounded-tl-br">
-    <h2 class="text-3xl md:text-4xl font-semibold tracking-widest mb-6">
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-widest mb-6 text-center">
       VALORES
     </h2>
 

@@ -13,11 +13,11 @@
 
     @include('partials.hero')
 
-    @include('partials.catalog')
+    @include('partials.vintage')
 
     @include('partials.values')
 
-    @include('partials.vintage')
+    @include('partials.catalog')
 
     @include('partials.cta')
 
