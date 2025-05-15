@@ -10,10 +10,15 @@
 
     @include('partials.header')
 
-    <main class="px-6 py-10">
-        <h1 class="text-3xl font-bold mb-4">Valores</h1>
-        <p class="text-lg">Aquí se mostrarán los valores que consideramos.</p>
+    <main class="px-6 py-10 space-y-12">
+        @include('partials.intro-values')
+        @include('partials.values-vintage')
+        @include('partials.values-style')
+        @include('partials.vintage-classics')
+        @include('partials.cta-values')
     </main>
+
+    @include('partials.footer')
 
 </body>
 </html>
