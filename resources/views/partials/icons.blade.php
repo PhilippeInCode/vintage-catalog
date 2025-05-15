@@ -1,4 +1,4 @@
-<section class="bg-orange text-gray-900 px-6 py-16">
+<section class="bg-beige text-gray-900 px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 text-center gap-12 mt-6">
         <div>
             <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041145/xplmbxympyqks2yiu9h1.png" alt="Aprender" class="mx-auto h-32 mb-4">
