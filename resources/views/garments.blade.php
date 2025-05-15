@@ -39,9 +39,21 @@
 
 @include('partials.header')
 
+<section class="relative h-[1500px] w-full bg-cover bg-center flex items-center justify-center text-center"
+         style="background-image: url('https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041148/ddrndfndygay6c82jlxd.png');">
+    <div class="bg-ivory bg-opacity-50 px-20 py-10 rounded shadow-lg max-w-2xl">
+        <h1 class="text-5xl md:text-6xl font-sans font-bold text-gray-900 mb-2">
+            Todo comienza<br>con la inspiración
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-800">
+            Sumérgete en nuestro colección de prendas vintage
+        </p>
+    </div>
+</section>
+
 <main class="px-6 py-10">
     <h1 class="text-4xl font-serif font-semibold mb-6 text-center">Catálogo de prendas vintage</h1>
-    <p class="text-md text-center mb-10 text-gray-700">Explora la colección completa de prendas únicas seleccionadas con mimo.</p>
+    <p class="text-md text-center mb-10 text-gray-700">Explora nuestra colección de prendas vintage.</p>
 
     <form method="POST" action="{{ route('admin.garments.destroySelected') }}" id="deleteForm">
         @csrf
