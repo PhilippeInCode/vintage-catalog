@@ -1,4 +1,4 @@
-<section class="bg-orange text-brown px-6 py-20">
+<section class="bg-orange text-gray-900 px-6 py-20">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div class="text-center">
             <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747294129/qq_xtbp76.jpg" alt="Ilustración" class="w-full max-w-sm mx-auto">
