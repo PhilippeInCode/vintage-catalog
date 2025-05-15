@@ -11,7 +11,7 @@
     @include('partials.header')
 
     <main class="flex flex-col items-center px-6 py-14 text-center max-w-xl mx-auto">
-        <h1 class="text-4xl font-serif font-bold tracking-wide mb-6">CONTACTO</h1>
+        <h1 class="text-4xl font-sans font-bold tracking-wide mb-6">CONTACTO</h1>
 
         <p class="text-md text-gray-800 mb-10 leading-relaxed">
             Para cualquier consulta o contactar con nosotros, puedes hacerlo a través del siguiente formulario

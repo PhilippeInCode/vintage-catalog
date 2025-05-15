@@ -52,9 +52,8 @@
 </section>
 
 <main class="px-6 py-10">
-    <h1 class="text-4xl font-serif font-semibold mb-6 text-center">Catálogo de prendas vintage</h1>
-    <p class="text-md text-center mb-10 text-gray-700">Explora nuestra colección de prendas vintage.</p>
-
+    <h1 class="text-4xl font-sans font-semibold mb-6 text-center">Explora nuestra colección de prendas vintage.</h1>
+    
     <form method="POST" action="{{ route('admin.garments.destroySelected') }}" id="deleteForm">
         @csrf
         @method('DELETE')
