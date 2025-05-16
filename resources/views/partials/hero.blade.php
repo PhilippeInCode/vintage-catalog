@@ -6,7 +6,7 @@
   >
 
   <div class="absolute inset-0 flex items-center justify-center">
-    <h1 class="bg-beige/70 text-black font-sans text-xl md:text-2xl lg:text-3xl px-6 py-2 rounded-full shadow-md">
+    <h1 class="bg-beige/80 text-black font-sans text-2xl md:text-4xl lg:text-5xl px-10 py-4 rounded-full shadow-lg">
       El legado de la moda permanente
     </h1>
   </div>
