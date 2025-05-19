@@ -1,10 +1,10 @@
 <section class="space-y-6">
     <header>
-        <h2 class="text-xl font-bold text-brown">
+        <h2 class="text-3xl font-bold text-brown">
             {{ __('Borrar cuenta') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
+        <p class="mt-1 text-lg text-gray-600">
             {{ __('Una vez eliminada su cuenta, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.') }}
         </p>
     </header>
