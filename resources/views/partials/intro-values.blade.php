@@ -7,7 +7,7 @@
         </p>
         
         <p class="text-xl">
-            De tal forma, para la moda vintage, es importante seguir unos valores que nos ayudan a mejorar cada día y a aspirar a una moda más 
+            De la misma manera, para la moda vintage, es importante seguir unos valores que nos ayudan a mejorar cada día y a aspirar a una moda más 
             <strong>sostenible</strong>, de mejor <strong>calidad</strong>, <strong>respetuosa</strong>
             con las <strong>personas</strong> y el <strong>medio ambiente</strong>.
         </p>
