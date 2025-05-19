@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Asegúrate de que tu cuenta use una contraseña larga y aleatoria para mantener tu cuenta segura') }}
+            {{ __('Asegúrate de que tu cuenta use una contraseña larga y aleatoria para mantener tu cuenta segura.') }}
         </p>
     </header>
 
@@ -41,7 +41,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Guardado.') }}</p>
             @endif
         </div>
     </form>
