@@ -1,20 +1,26 @@
 <?php
-
-namespace Tests\Feature;
-
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class CatalogPageTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
+    use RefreshDatabase;
+
+    public function test_catalog_page_loads_and_displays_garment_data(): void
     {
-        $response = $this->get('/');
+        $garment = \App\Models\Garment::factory()->hasPhotos(1)->create([
+            'name' => 'Chaqueta A-2',
+            'description' => 'Chaqueta de aviador',
+            'production_year' => 1931,
+            'used_country' => 'P. Goldsmith Sons Co.',
+        ]);
+
+        $response = $this->get('/garments');
 
         $response->assertStatus(200);
+        $response->assertSee('Chaqueta A-2');
+        $response->assertSee('Chaqueta de aviador');
+        $response->assertSee('1931');
+        $response->assertSee('P. Goldsmith Sons Co.');
     }
 }

@@ -6,7 +6,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" type="image/x-icon">
 
-    {{-- SweetAlert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-beige text-gray-900 antialiased">
@@ -113,7 +112,6 @@
     </form>
 </main>
 
-{{-- Scripts --}}
 @if (!empty($editMode) && $editMode)
 <script>
     document.addEventListener('DOMContentLoaded', () => {
