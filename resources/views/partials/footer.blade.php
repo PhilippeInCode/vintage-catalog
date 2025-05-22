@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row md:justify-between gap-8">
     
     <div class="space-y-4 md:space-y-2">
-      <img src="{{ asset('https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png') }}" alt="Logo" class="h-15">
+      <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" alt="Logo" class="h-15">
       <p class="text-xl leading-relaxed">
         Proyecto íntegramente dedicado<br>
         al fomento de la moda vintage<br>
@@ -30,7 +30,7 @@
         >OK</button>
       </form>
       <a href="#" target="_blank" class="mt-2">
-        <img src="{{ asset('https://download.logo.wine/logo/Instagram/Instagram-Logo.wine.png') }}" alt="Instagram" class="h-10 w-15">
+        <img src="https://download.logo.wine/logo/Instagram/Instagram-Logo.wine.png" alt="Instagram" class="h-10 w-15">
       </a>
     </div>
   </div>

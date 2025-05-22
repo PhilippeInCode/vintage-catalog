@@ -8,6 +8,10 @@
 </head>
 <body class="bg-beige text-gray-900 antialiased">
 
+    @if (!app()->environment('testing'))
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @endif
+
     @include('partials.header')
 
     <main>
