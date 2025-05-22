@@ -54,6 +54,10 @@ Route::middleware('web')->group(function () {
     Route::get('/about', fn () => view('about'))->name('about');
     Route::get('/contact', fn () => view('contact'))->name('contact');
     Route::get('/terms', fn () => view('terms'))->name('terms');
+
+    Route::get('/admin/garments/delete', [AdminGarmentController::class, 'deleteMode'])
+    ->middleware('auth')
+    ->name('admin.garments.deleteMode');
 });
 
 require __DIR__.'/auth.php';
