@@ -60,4 +60,6 @@ Route::middleware('web')->group(function () {
     ->name('admin.garments.deleteMode');
 });
 
+Route::get('/admin-only-test', fn () => 'Acceso admin')->middleware(['auth', \App\Http\Middleware\IsAdmin::class]);
+
 require __DIR__.'/auth.php';

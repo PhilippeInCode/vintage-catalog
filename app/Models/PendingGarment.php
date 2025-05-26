@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Testing\Fluent\Concerns\Has;
 
 class PendingGarment extends Model
 {
+    use HasFactory;
+
     protected $table = 'pending_garments';
 
     public $timestamps = false;
