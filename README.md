@@ -124,17 +124,36 @@ php artisan test --coverage-html=coverage
 | **Welcome Test**  | ![Welcome Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277929/WelcomeTest_erui2v.png) |
 | **Catalog Test**  | ![Catalog Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277930/CatalogTest_rhnz71.png) |
 | **Values Test** | ![Values Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277928/ValuesTest_nd4sy7.png) |
+| **Terms Test** | ![Terms Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277932/TermsTest_ojvqdp.png) |
 | **About Test**    | ![About Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277929/AboutTest_s0f1uw.png) |
 | **Admin Dashboard Test** | ![Admin Dashboard Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277929/AdminDashboardTest_dnas3h.png) |
+| **User Dashboard Test** | ![User Dashboard Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277928/UserDashboardTest_dvv4kl.png) |
+| **Admin Garment Create Garment Test** | ![Admin Garment Create Garment Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277930/CreateGarmentTest_wwkub2.png) |
+| **Admin Garment Edit Garment Test** | ![Admin Garment Edit Garment Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277931/EditGarmentTest_u9zpfd.png) |
 
 #### 🛠️ Backend
 
 | Test Name         | Screenshot |
 |------------------|------------|
 | **Admin CRUD Test**  | ![Admin CRUD Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278348/CRUDGarmentTest_hurpbq.png) |
-| **Admin Controller Test**  | ![Admin Controller Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278413/GarmentControllerTest_qpnlbq.png) |
 | **App Layout Component Test**  | ![App Layout Component Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278479/AppLayoutComponentTest_qpvuqt.png) |
 | **Guest Layout Component Test**  | ![Guest Layout Component Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278481/GuestLayoutComponentTest_rhbtqi.png) |
+
+##### 📦 Models
+
+| Test Name | Screenshot |
+|-----------|------------|
+| **User Model Test** | ![User Model Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748279885/UserModelTest_h1o1t2.png) |
+| **Garment Model Test** | ![Garment Model Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748279884/GarmentModelTest_zxglfk.png) |
+| **Like Model Test** | ![Like Model Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748279837/LikeModelTest_wdqi2s.png) |
+| **Pending Garment Test** | ![Pending Garment Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748279886/PendingGarmentModelTest_afq5gh.png) |
+| **Photo Model Test** | ![Photo Model Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748279882/PhotoModelTest_j7folr.png) |
+
+##### ⚙️ Controllers & Middleware
+
+| Test Name | Screenshot |
+|-----------|------------|
+| **Garment Controller Test**  | ![Garment Controller Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278413/GarmentControllerTest_qpnlbq.png) |
 | **Is Admin Middleware Test**  | ![Is Admin Middleware Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278480/IsAdminMiddlewareTest_bvvumu.png) |
 
 ---
