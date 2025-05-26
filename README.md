@@ -99,6 +99,44 @@
 
 ## 🧪 Test Screenshots <a name="-test-screenshots"></a>
 
+To execute all available feature and unit tests (including coverage if needed), run the following command:
+
+```bash
+php artisan test
+```
+
+If you want to generate a coverage report (requires Xdebug), use:
+
+```bash
+php artisan test --coverage
+```
+
+You can also generate a full HTML coverage report (output to the coverage/ folder):
+
+```bash
+php artisan test --coverage-html=coverage
+```
+
+#### 🎨 Frontend
+
+| Test Name         | Screenshot |
+|------------------|------------|
+| **Welcome Test**  | ![Welcome Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277929/WelcomeTest_erui2v.png) |
+| **Catalog Test**  | ![Catalog Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277930/CatalogTest_rhnz71.png) |
+| **Values Test** | ![Values Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277928/ValuesTest_nd4sy7.png) |
+| **About Test**    | ![About Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277929/AboutTest_s0f1uw.png) |
+| **Admin Dashboard Test** | ![Admin Dashboard Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748277929/AdminDashboardTest_dnas3h.png) |
+
+#### 🛠️ Backend
+
+| Test Name         | Screenshot |
+|------------------|------------|
+| **Admin CRUD Test**  | ![Admin CRUD Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278348/CRUDGarmentTest_hurpbq.png) |
+| **Admin Controller Test**  | ![Admin Controller Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278413/GarmentControllerTest_qpnlbq.png) |
+| **App Layout Component Test**  | ![App Layout Component Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278479/AppLayoutComponentTest_qpvuqt.png) |
+| **Guest Layout Component Test**  | ![Guest Layout Component Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278481/GuestLayoutComponentTest_rhbtqi.png) |
+| **Is Admin Middleware Test**  | ![Is Admin Middleware Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278480/IsAdminMiddlewareTest_bvvumu.png) |
+
 ---
 
 ## 🚀 Next Steps <a name="-next-steps"></a>
