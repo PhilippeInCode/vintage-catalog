@@ -5,8 +5,6 @@
     <title>Catálogo</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" type="image/x-icon">
-
-    {{-- SweetAlert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-beige text-gray-900 antialiased">
@@ -89,9 +87,7 @@
                     @endif
 
                     <div class="text-center">
-                        @php
-                            $firstPhoto = $garment->photos->first();
-                        @endphp
+                        @php $firstPhoto = $garment->photos->first(); @endphp
                         <img src="{{ $firstPhoto ? $firstPhoto->image_url : 'https://via.placeholder.com/120x140?text=Prenda' }}"
                              alt="Imagen de {{ $garment->name }}"
                              class="mx-auto h-32 object-contain mb-2">
@@ -106,6 +102,21 @@
                         @if($garment->used_country)
                             <p class="text-xs text-gray-600">Diseñador: {{ $garment->used_country }}</p>
                         @endif
+
+                        {{-- BOTÓN DE FAVORITO --}}
+                        @auth
+                            <form action="{{ route('garments.favorite', $garment->id) }}" method="POST" class="mt-2">
+                                @csrf
+                                @php
+                                    $liked = $garment->likes->contains('user_id', auth()->id());
+                                @endphp
+                                <button type="submit"
+                                        class="text-sm font-medium px-3 py-1 rounded
+                                               {{ $liked ? 'bg-red-200 text-red-700 hover:bg-red-300' : 'bg-green-200 text-green-700 hover:bg-green-300' }}">
+                                    {{ $liked ? 'Quitar de favoritos ❤️' : 'Añadir a favoritos 🤍' }}
+                                </button>
+                            </form>
+                        @endauth
                     </div>
                 </div>
             @endforeach
@@ -113,7 +124,6 @@
     </form>
 </main>
 
-{{-- Scripts --}}
 @if (!empty($editMode) && $editMode)
 <script>
     document.addEventListener('DOMContentLoaded', () => {
