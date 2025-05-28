@@ -83,6 +83,18 @@
 
 ## 🎨 App Design <a name="-app-design"></a>
 
+### 🖥️ Desktop Version  
+
+| Home Page | Catalog Page | Values Page | About Page | Contact |
+|-----------|----------------|------------------------|----------------|----------------|
+| ![Home Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748430988/HomePage_hef6ux.jpg) | ![Catalog Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748433654/CatalogPage_xbnawu.jpg) | ![Values Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431275/ValuesPage_tqc1kj.jpg) | ![About Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431465/AboutPage_qmoict.jpg) | ![Contacto](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431465/ContactPage_yiyjre.jpg) |
+
+### 📱 Mobile Version  
+
+| Home Page | Catalog Page | Values Page | About Page | Contacto |
+|-----------|----------------|------------------------|----------------|----------------|
+| ![Home Page]() | ![Catalog Page]() | ![Values Page]() | ![About Page]() | ![Contacto]() |
+
 ---
 
 ## 💻 Technologies Used <a name="-technologies-used"></a>
@@ -160,12 +172,17 @@ php artisan test --coverage-html=coverage
 
 ## 🚀 Next Steps <a name="-next-steps"></a>
 
+- <i>Integrate women vintage garments in catalog</i>
+- <i>Advices for dressing properly</i>
+- <i>Garment review</i>
+    
 ---
 
 ## 🔍 Preview <a name="-preview"></a>
-
+<i>Coming soon</i>
 ---
 
 ## 🔖 License <a name="-license"></a>
 
 This project is licensed under the MIT License © Vintage-Catalog.
+---
