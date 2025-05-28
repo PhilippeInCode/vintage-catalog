@@ -81,19 +81,27 @@
 
 ---
 
-## 🎨 App Design <a name="-app-design"></a>
+## 🎨 App Design <a name="-app-design"></a> 
 
-### 🖥️ Desktop Version  
+### 🖥️ Desktop Version
 
-| Home Page | Catalog Page | Values Page | About Page | Contact |
-|-----------|----------------|------------------------|----------------|----------------|
-| ![Home Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748430988/HomePage_hef6ux.jpg) | ![Catalog Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748433654/CatalogPage_xbnawu.jpg) | ![Values Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431275/ValuesPage_tqc1kj.jpg) | ![About Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431465/AboutPage_qmoict.jpg) | ![Contacto](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431465/ContactPage_yiyjre.jpg) |
+| **Page**        | **Screenshot** |
+|------------------|----------------|
+| **Home**    | ![Home Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748430988/HomePage_hef6ux.jpg) |
+| **Catalog** | ![Catalog Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748433654/CatalogPage_xbnawu.jpg) |
+| **Values**  | ![Values Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431275/ValuesPage_tqc1kj.jpg) |
+| **About**   | ![About Page](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431465/AboutPage_qmoict.jpg) |
+| **Contact** | ![Contacto](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748431465/ContactPage_yiyjre.jpg) |
 
 ### 📱 Mobile Version  
 
-| Home Page | Catalog Page | Values Page | About Page | Contacto |
-|-----------|----------------|------------------------|----------------|----------------|
-| ![Home Page]() | ![Catalog Page]() | ![Values Page]() | ![About Page]() | ![Contacto]() |
+| **Page**        | **Screenshot** |
+|------------------|----------------|
+| **Home**    | ![Home Page]() |
+| **Catalog** | ![Catalog Page]() |
+| **Values**  | ![Values Page]() |
+| **About**   | ![About Page]() |
+| **Contact** | ![Contacto]() |
 
 ---
 
