@@ -103,19 +103,20 @@
                             <p class="text-xs text-gray-600">Diseñador: {{ $garment->used_country }}</p>
                         @endif
 
-                        {{-- BOTÓN DE FAVORITO --}}
                         @auth
-                            <form action="{{ route('garments.favorite', $garment->id) }}" method="POST" class="mt-2">
-                                @csrf
-                                @php
-                                    $liked = $garment->likes->contains('user_id', auth()->id());
-                                @endphp
-                                <button type="submit"
-                                        class="text-sm font-medium px-3 py-1 rounded
+                            @if (!(Auth::user()->role === 'admin' && (request()->query('mode') === 'edit' || request()->query('mode') === 'delete')))
+                                <form action="{{ route('garments.favorite', $garment->id) }}" method="POST" class="mt-2">
+                                    @csrf
+                                    @php
+                                        $liked = $garment->likes->contains('user_id', auth()->id());
+                                    @endphp
+                                    <button type="submit"
+                                            class="text-sm font-medium px-3 py-1 rounded
                                                {{ $liked ? 'bg-red-200 text-red-700 hover:bg-red-300' : 'bg-green-200 text-green-700 hover:bg-green-300' }}">
-                                    {{ $liked ? 'Quitar de favoritos ❤️' : 'Añadir a favoritos 🤍' }}
-                                </button>
-                            </form>
+                                        {{ $liked ? 'Quitar de favoritos ❤️' : 'Añadir a favoritos 🤍' }}
+                                    </button>
+                                </form>
+                            @endif
                         @endauth
                     </div>
                 </div>
