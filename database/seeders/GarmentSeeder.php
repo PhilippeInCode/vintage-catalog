@@ -30,7 +30,7 @@ class GarmentSeeder extends Seeder
                 'production_period' => '1960s',
                 'usage_type' => 'military',
                 'usage_year' => 1968,
-                'used_country' => 'Vietnam, United States',
+                'used_country' => 'United States',
                 'materials' => 'Nylon-cotton blend',
                 'image_url' => 'https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/nat2dawj3j4n0urvgbua.png',
             ],
