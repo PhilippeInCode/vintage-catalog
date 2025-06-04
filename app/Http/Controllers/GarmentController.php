@@ -16,10 +16,10 @@ class GarmentController extends Controller
         return view('garments', compact('garments', 'deleteMode', 'editMode'));
     }
 
-    public function create() {}
-    public function store(Request $request) {}
-    public function show(Garment $garment) {}
-    public function edit(Garment $garment) {}
-    public function update(Request $request, Garment $garment) {}
-    public function destroy(Garment $garment) {}
+    public function show(Garment $garment)
+    {
+        $garment->load('photos'); 
+        return view('garments.show', compact('garment'));
+    }
+
 }

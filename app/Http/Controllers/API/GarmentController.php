@@ -12,12 +12,10 @@ class GarmentController extends Controller
 {
     public function __construct()
     {
-        // Aplica auth sólo a store/update/destroy
         $this->middleware('auth:sanctum')
          ->except(['index', 'show']);
     }
 
-    // GET /api/garments
     public function index()
     {
         return response()->json(
@@ -26,7 +24,6 @@ class GarmentController extends Controller
         );
     }
 
-    // GET /api/garments/{garment}
     public function show(Garment $garment)
     {
         return response()->json(
@@ -35,7 +32,6 @@ class GarmentController extends Controller
         );
     }
 
-    // POST /api/garments
     public function store(StoreGarmentRequest $request)
     {
         $this->authorizeAction();
@@ -43,7 +39,6 @@ class GarmentController extends Controller
         return response()->json($garment, Response::HTTP_CREATED);
     }
 
-    // PUT /api/garments/{garment}
     public function update(UpdateGarmentRequest $request, Garment $garment)
     {
         $this->authorizeAction();
@@ -51,7 +46,6 @@ class GarmentController extends Controller
         return response()->json($garment, Response::HTTP_OK);
     }
 
-    // DELETE /api/garments/{garment}
     public function destroy(Garment $garment)
     {
         $this->authorizeAction();
@@ -59,7 +53,6 @@ class GarmentController extends Controller
         return response()->json(null, Response::HTTP_NO_CONTENT);
     }
 
-    // Sólo admin puede mutar datos
     protected function authorizeAction()
     {
         if (Auth::user()->role !== 'admin') {

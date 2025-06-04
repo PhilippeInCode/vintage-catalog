@@ -27,7 +27,7 @@ Route::middleware('web')->group(function () {
     })->name('admin.dashboard');
 
     Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-        Route::get('/dashboard', fn () => view('admin.dashboard'))->name('dashboard');
+        Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
 
         Route::get('/garments/create', [AdminGarmentController::class, 'create'])->name('garments.create');
         Route::post('/garments', [AdminGarmentController::class, 'store'])->name('garments.store');
@@ -51,10 +51,10 @@ Route::middleware('web')->group(function () {
     });
 
     Route::get('/garments', [GarmentController::class, 'index'])->name('garments');
-    Route::get('/values', fn () => view('values'))->name('values');
-    Route::get('/about', fn () => view('about'))->name('about');
-    Route::get('/contact', fn () => view('contact'))->name('contact');
-    Route::get('/terms', fn () => view('terms'))->name('terms');
+    Route::get('/values', fn() => view('values'))->name('values');
+    Route::get('/about', fn() => view('about'))->name('about');
+    Route::get('/contact', fn() => view('contact'))->name('contact');
+    Route::get('/terms', fn() => view('terms'))->name('terms');
 
     Route::get('/admin/garments/delete', [AdminGarmentController::class, 'deleteMode'])
         ->middleware('auth')
@@ -67,8 +67,9 @@ Route::middleware('web')->group(function () {
     Route::post('/garments/{id}/favorite', [FavoriteController::class, 'toggle'])
         ->name('garments.favorite');
 
+    Route::get('/garments/{garment}', [GarmentController::class, 'show'])->name('garments.show');
 });
 
-Route::get('/admin-only-test', fn () => 'Acceso admin')->middleware(['auth', \App\Http\Middleware\IsAdmin::class]);
+Route::get('/admin-only-test', fn() => 'Acceso admin')->middleware(['auth', \App\Http\Middleware\IsAdmin::class]);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

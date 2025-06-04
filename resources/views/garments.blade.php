@@ -78,6 +78,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($garments as $garment)
                 <div class="relative bg-[#FDF7F1] border border-[#F1E3D3] rounded-xl p-4 shadow hover:scale-105 transition duration-300 ease-in-out">
+
                     @if (!empty($deleteMode) && $deleteMode)
                         <input type="checkbox" name="garment_ids[]" value="{{ $garment->id }}"
                                class="absolute top-2 right-2 w-5 h-5 text-red-600">
@@ -88,9 +89,18 @@
 
                     <div class="text-center">
                         @php $firstPhoto = $garment->photos->first(); @endphp
+
+                        @if (empty($editMode) && empty($deleteMode))
+                            <a href="{{ route('garments.show', $garment->id) }}">
+                        @endif
+
                         <img src="{{ $firstPhoto ? $firstPhoto->image_url : 'https://via.placeholder.com/120x140?text=Prenda' }}"
                              alt="Imagen de {{ $garment->name }}"
                              class="mx-auto h-32 object-contain mb-2">
+
+                        @if (empty($editMode) && empty($deleteMode))
+                            </a>
+                        @endif
 
                         <h2 class="text-md font-bold italic text-gray-900">{{ $garment->name }}</h2>
                         <p class="text-xs text-gray-800 mt-1">{{ $garment->description }}</p>
