@@ -44,7 +44,7 @@ class GarmentSeeder extends Seeder
                 'usage_year' => 1945,
                 'used_country' => 'United States',
                 'materials' => 'Cotton jungle cloth, wool lining',
-                'image_url' => 'https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/tbc3ywtk2wbzfhky5wyx.png',
+                'image_url' => 'https://res.cloudinary.com/dk1g12n2h/image/upload/v1749019075/n-1_yshbsy.png',
             ],
             [
                 'name' => 'Cotton Canvas Deck Shoes',
