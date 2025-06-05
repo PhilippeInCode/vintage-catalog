@@ -8,7 +8,7 @@
     <div class="bg-ivory px-6 py-8 rounded-3xl shadow-md relative flex flex-col items-center space-y-4">
       <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041146/cegbpol3ay8ltxyluq97.png" alt="Favorito" class="w-5 absolute top-4 right-4">
       <h3 class="text-lg font-semibold tracking-wide">N-1 Deck jacket</h3>
-      <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/nat2dawj3j4n0urvgbua.png" alt="N-1 Deck jacket" class="h-40 object-contain">
+      <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1749019075/n-1_yshbsy.png" alt="N-1 Deck jacket" class="h-40 object-contain">
       <p class="text-sm leading-snug text-center">
         Chaqueta de cubierta<br>
         Año de distribución: 1943<br>
@@ -19,7 +19,7 @@
     <div class="bg-ivory px-6 py-8 rounded-3xl shadow-md relative flex flex-col items-center space-y-4">
       <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041146/cegbpol3ay8ltxyluq97.png" alt="Favorito" class="w-5 absolute top-4 right-4">
       <h3 class="text-lg font-semibold tracking-wide">M-65 Jacket</h3>
-      <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/tbc3ywtk2wbzfhky5wyx.png" alt="M-65 Jacket" class="h-40 object-contain">
+      <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/nat2dawj3j4n0urvgbua.png" alt="M-65 Jacket" class="h-40 object-contain">
       <p class="text-sm leading-snug text-center">
         Chaqueta de campo<br>
         Año de distribución: 1965<br>

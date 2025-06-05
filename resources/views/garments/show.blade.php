@@ -17,8 +17,8 @@
 
     <div class="mt-6 ml-6">
         <a href="{{ route('garments') }}">
-            <img src="{{ asset('https://res.cloudinary.com/dk1g12n2h/image/upload/v1749033966/flecha_co8hjd.png') }}" alt="Volver"
-                class="w-15 h-10 hover:scale-110 transition-transform duration-200">
+            <img src="{{ asset('https://res.cloudinary.com/dk1g12n2h/image/upload/v1749033966/flecha_co8hjd.png') }}"
+                alt="Volver" class="w-15 h-10 hover:scale-110 transition-transform duration-200">
         </a>
     </div>
 
@@ -44,8 +44,29 @@
                     </div>
                 </div>
 
+
+
                 <div class="md:w-1/2">
-                    <h1 class="text-4xl font-bold mb-6">{{ $garment->name }}</h1>
+                    <div class="flex justify-between items-start mb-6">
+                        <h1 class="text-4xl font-bold">{{ $garment->name }}</h1>
+
+                        @auth
+                            @if (!(Auth::user()->role === 'admin' && (request()->query('mode') === 'edit' || request()->query('mode') === 'delete')))
+                                <form action="{{ route('garments.favorite', $garment->id) }}" method="POST" class="ml-4  mt-[10px]">
+                                    @csrf
+                                    @php
+                                        $liked = $garment->likes->contains('user_id', auth()->id());
+                                    @endphp
+                                    <button type="submit"
+                                        class="text-sm font-medium px-3 py-1 rounded
+                            {{ $liked ? 'bg-red-200 text-red-700 hover:bg-red-300' : 'bg-green-200 text-green-700 hover:bg-green-300' }}">
+                                        {{ $liked ? 'Quitar de favoritos ❤️' : 'Añadir a favoritos 🤍' }}
+                                    </button>
+                                </form>
+                            @endif
+                        @endauth
+                    </div>
+
                     <ul class="space-y-3 text-sm leading-6">
                         @if ($garment->description)
                             <li><strong>Descripción:</strong> {{ $garment->description }}</li>
@@ -73,6 +94,7 @@
                         @endif
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
