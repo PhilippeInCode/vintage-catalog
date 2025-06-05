@@ -26,4 +26,31 @@
     @else
         <p class="text-sm text-gray-700 italic">No tienes prendas marcadas como favoritas.</p>
     @endif
+
+    <div class="mt-10">
+        <a href="{{ route('request.garment.create') }}"
+           class="bg-ivory hover:bg-orange text-brown px-6 py-2 rounded shadow inline-block">
+            ➕ Solicitar añadir prenda
+        </a>
+    </div>
+
+    @if (Auth::user()->garmentRequests()->count())
+        <div class="mt-10">
+            <h2 class="text-2xl font-bold mb-4 text-brown">Tus solicitudes</h2>
+            <ul class="space-y-2">
+                @foreach (Auth::user()->garmentRequests as $request)
+                    <li class="p-4 bg-white shadow rounded flex justify-between items-center">
+                        <span><strong>{{ $request->name }}</strong></span>
+                        <span class="px-3 py-1 rounded text-sm
+                            @if($request->status === 'pending') bg-yellow-100 text-yellow-800
+                            @elseif($request->status === 'accepted') bg-green-100 text-green-800
+                            @else bg-red-100 text-red-800 @endif">
+                            {{ ucfirst($request->status) }}
+                        </span>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 @endsection

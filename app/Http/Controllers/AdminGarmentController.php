@@ -6,6 +6,8 @@ use App\Models\Garment;
 use Illuminate\Http\Request;
 use Cloudinary\Api\Search\SearchApi;
 use Cloudinary\Cloudinary;
+use App\Models\GarmentRequest;
+use App\Models\Photo;
 
 class AdminGarmentController extends Controller
 {
@@ -138,5 +140,60 @@ class AdminGarmentController extends Controller
         }
 
         return redirect()->route('garments')->with('success', 'Prendas eliminadas correctamente.');
+    }
+
+    public function acceptRequest($id)
+    {
+        $request = GarmentRequest::with('user', 'photos')->findOrFail($id);
+
+        // Crear prenda
+        $garment = Garment::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'usage_type' => $request->usage_type,
+            'origin_country' => $request->origin_country,
+            'used_country' => $request->used_country,
+            'production_year' => $request->production_year,
+            'usage_year' => $request->usage_year,
+            'production_period' => $request->production_period,
+            'materials' => $request->materials,
+        ]);
+
+        $folderName = 'VintageCatalog/Garments/' . $garment->name;
+
+        $cloudinary = new \Cloudinary\Cloudinary([
+            'cloud' => [
+                'cloud_name' => config('services.cloudinary.cloud_name'),
+                'api_key'    => config('services.cloudinary.api_key'),
+                'api_secret' => config('services.cloudinary.api_secret'),
+            ]
+        ]);
+
+        if ($request->photos && $request->photos->count()) {
+            foreach ($request->photos as $photo) {
+                $upload = $cloudinary->uploadApi()->upload($photo->image_url, [
+                    'folder' => $folderName,
+                ]);
+
+                $garment->photos()->create([
+                    'image_url' => $upload['secure_url'],
+                    'public_id' => $upload['public_id'],
+                ]);
+            }
+        }
+
+        $request->status = 'accepted';
+        $request->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Petición aceptada y prenda creada.');
+    }
+
+    public function rejectRequest($id)
+    {
+        $request = GarmentRequest::findOrFail($id);
+        $request->status = 'rejected';
+        $request->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Petición rechazada.');
     }
 }

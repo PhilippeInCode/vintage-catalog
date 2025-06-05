@@ -4,7 +4,6 @@
     <h1 class="text-3xl font-bold mb-6">Bienvenido {{ Auth::user()->name }} a tu dashboard</h1>
 
     <div class="grid grid-cols-2 gap-6 mb-10">
-
         <a href="{{ route('admin.garments.create') }}" class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
             <img src="https://img.icons8.com/ios-filled/50/00e676/plus-math.png" class="h-15 mb-4" alt="Añadir">
             <span class="text-brown font-bold text-2xl">Añadir prenda</span>
@@ -49,4 +48,36 @@
     @else
         <p class="text-sm text-gray-700 italic">No tienes prendas marcadas como favoritas.</p>
     @endif
+
+    <h2 class="text-2xl font-bold mt-16 mb-4 text-brown">Peticiones de usuarios</h2>
+
+    @forelse ($requests as $request)
+        <div class="bg-white border border-gray-200 rounded p-4 mb-4 shadow">
+            <p><strong>{{ $request->name }}</strong> — {{ $request->user->name }}</p>
+            <p class="text-sm text-gray-600 mb-2">{{ $request->description ?? 'Sin descripción' }}</p>
+
+            @if ($request->status === 'pending')
+                <div class="flex gap-4 mt-2">
+                    <form method="POST" action="{{ route('admin.requests.accept', $request->id) }}">
+                        @csrf
+                        @method('PATCH')
+                        <button class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">Aceptar</button>
+                    </form>
+                    <form method="POST" action="{{ route('admin.requests.reject', $request->id) }}">
+                        @csrf
+                        @method('PATCH')
+                        <button class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">Rechazar</button>
+                    </form>
+                </div>
+            @else
+                <span class="inline-block mt-2 px-3 py-1 rounded text-sm
+                    @if($request->status === 'accepted') bg-green-100 text-green-800
+                    @else bg-red-100 text-red-800 @endif">
+                    {{ $request->status === 'accepted' ? 'Aceptada' : 'Denegada' }}
+                </span>
+            @endif
+        </div>
+    @empty
+        <p class="italic text-sm text-gray-700">No hay peticiones nuevas.</p>
+    @endforelse
 @endsection

@@ -24,16 +24,19 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function likes(){
+    public function likes()
+    {
         return $this->hasMany(Like::class);
     }
 
-    public function privateCatalog(){
+    public function privateCatalog()
+    {
         return $this->belongsToMany(Garment::class, 'private_catalog')
-                    ->withTimestamps();
+            ->withTimestamps();
     }
 
-    public function pendingGarments(){
+    public function pendingGarments()
+    {
         return $this->hasMany(PendingGarment::class);
     }
 
@@ -43,5 +46,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function garmentRequests()
+    {
+        return $this->hasMany(\App\Models\GarmentRequest::class);
     }
 }
