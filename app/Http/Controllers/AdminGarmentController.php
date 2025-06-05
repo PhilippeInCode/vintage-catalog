@@ -135,18 +135,27 @@ class AdminGarmentController extends Controller
             } catch (\Exception $e) {
             }
 
-            $garment->photos()->delete();
-            $garment->delete();
+            $relatedRequest = GarmentRequest::where('name', $garment->name)
+                ->where('status', 'accepted')
+                ->first();
+
+            if ($relatedRequest) {
+                $relatedRequest->photos()->delete(); 
+                $relatedRequest->delete();           
+            }
+
+            $garment->photos()->delete(); 
+            $garment->delete();          
         }
 
         return redirect()->route('garments')->with('success', 'Prendas eliminadas correctamente.');
     }
 
+
     public function acceptRequest($id)
     {
         $request = GarmentRequest::with('user', 'photos')->findOrFail($id);
 
-        // Crear prenda
         $garment = Garment::create([
             'name' => $request->name,
             'description' => $request->description,
@@ -183,6 +192,7 @@ class AdminGarmentController extends Controller
         }
 
         $request->status = 'accepted';
+        $request->responded_at = now();
         $request->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Petición aceptada y prenda creada.');
@@ -192,6 +202,7 @@ class AdminGarmentController extends Controller
     {
         $request = GarmentRequest::findOrFail($id);
         $request->status = 'rejected';
+        $request->responded_at = now();
         $request->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Petición rechazada.');

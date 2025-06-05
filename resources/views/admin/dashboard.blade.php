@@ -4,22 +4,26 @@
     <h1 class="text-3xl font-bold mb-6">Bienvenido {{ Auth::user()->name }} a tu dashboard</h1>
 
     <div class="grid grid-cols-2 gap-6 mb-10">
-        <a href="{{ route('admin.garments.create') }}" class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
+        <a href="{{ route('admin.garments.create') }}"
+            class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
             <img src="https://img.icons8.com/ios-filled/50/00e676/plus-math.png" class="h-15 mb-4" alt="Añadir">
             <span class="text-brown font-bold text-2xl">Añadir prenda</span>
         </a>
 
-        <a href="{{ route('garments', ['mode' => 'delete']) }}" class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
+        <a href="{{ route('garments', ['mode' => 'delete']) }}"
+            class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
             <img src="https://img.icons8.com/ios-filled/50/fa314a/delete-sign.png" class="h-15 mb-4" alt="Eliminar">
             <span class="text-brown font-bold text-2xl">Eliminar prenda</span>
         </a>
 
-        <a href="{{ route('garments', ['mode' => 'edit']) }}" class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
+        <a href="{{ route('garments', ['mode' => 'edit']) }}"
+            class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
             <img src="https://img.icons8.com/ios-filled/50/2979ff/edit.png" class="h-15 mb-4" alt="Editar">
             <span class="text-brown font-bold text-2xl">Editar prenda</span>
         </a>
 
-        <a href="{{ route('garments') }}" class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
+        <a href="{{ route('garments') }}"
+            class="bg-ivory rounded-lg shadow p-10 flex flex-col items-center hover:bg-orange transition">
             <img src="https://img.icons8.com/ios-filled/50/2979ff/visible.png" class="h-15 mb-4" alt="Visualizar">
             <span class="text-brown font-bold text-2xl">Visualizar prendas</span>
         </a>
@@ -29,12 +33,11 @@
 
     @if (Auth::user()->likes()->count())
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @foreach(Auth::user()->likes()->with('garment.photos')->get() as $like)
+            @foreach (Auth::user()->likes()->with('garment.photos')->get() as $like)
                 @php $garment = $like->garment; @endphp
                 <div class="bg-[#FDF7F1] border border-[#F1E3D3] rounded-xl p-4 shadow">
                     <img src="{{ $garment->photos->first()->image_url ?? 'https://via.placeholder.com/120x140?text=Prenda' }}"
-                         alt="Imagen de {{ $garment->name }}"
-                         class="mx-auto h-32 object-contain mb-2">
+                        alt="Imagen de {{ $garment->name }}" class="mx-auto h-32 object-contain mb-2">
                     <h3 class="text-md font-bold text-center">{{ $garment->name }}</h3>
                     <form action="{{ route('garments.favorite', $garment->id) }}" method="POST" class="mt-2 text-center">
                         @csrf
@@ -55,6 +58,17 @@
         <div class="bg-white border border-gray-200 rounded p-4 mb-4 shadow">
             <p><strong>{{ $request->name }}</strong> — {{ $request->user->name }}</p>
             <p class="text-sm text-gray-600 mb-2">{{ $request->description ?? 'Sin descripción' }}</p>
+            <p class="text-sm text-gray-500">
+                <strong>Solicitado:</strong> {{ $request->created_at->format('d/m/Y H:i') }}
+            </p>
+
+            @if ($request->responded_at)
+                <p class="text-sm text-gray-500">
+                    <strong>
+                        {{ $request->status === 'accepted' ? 'Aceptado' : 'Rechazado' }}:
+                    </strong> {{ $request->responded_at->format('d/m/Y H:i') }}
+                </p>
+            @endif
 
             @if ($request->status === 'pending')
                 <div class="flex gap-4 mt-2">
@@ -70,8 +84,9 @@
                     </form>
                 </div>
             @else
-                <span class="inline-block mt-2 px-3 py-1 rounded text-sm
-                    @if($request->status === 'accepted') bg-green-100 text-green-800
+                <span
+                    class="inline-block mt-2 px-3 py-1 rounded text-sm
+                    @if ($request->status === 'accepted') bg-green-100 text-green-800
                     @else bg-red-100 text-red-800 @endif">
                     {{ $request->status === 'accepted' ? 'Aceptada' : 'Denegada' }}
                 </span>

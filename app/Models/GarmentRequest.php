@@ -21,8 +21,13 @@ class GarmentRequest extends Model
         'production_period',
         'materials',
         'status',
+        'responded_at',
     ];
 
+    protected $casts = [
+        'responded_at' => 'datetime',
+    ];
+    
     public function user()
     {
         return $this->belongsTo(User::class);
