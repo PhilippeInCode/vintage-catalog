@@ -176,6 +176,12 @@ php artisan test --coverage-html=coverage
 | **Garment Controller Test**  | ![Garment Controller Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278413/GarmentControllerTest_qpnlbq.png) |
 | **Is Admin Middleware Test**  | ![Is Admin Middleware Test](https://res.cloudinary.com/dk1g12n2h/image/upload/v1748278480/IsAdminMiddlewareTest_bvvumu.png) |
 
+##### Total Tests Coverage
+
+| Screenshot |
+|------------|
+| ![Coverage]() |
+
 ---
 
 ## 🚀 Next Steps <a name="-next-steps"></a>
