@@ -7,6 +7,7 @@
     <link rel="icon" href="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747037641/ncpuxn9vrfbr0gmdqezy.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body class="bg-beige text-gray-900 antialiased">
 
 @if(session('success'))
@@ -44,14 +45,14 @@
             Todo comienza<br>con la inspiración
         </h1>
         <p class="mt-6 text-lg md:text-xl text-gray-800">
-            Sumérgete en nuestro colección de prendas vintage
+            Sumérgete en nuestra colección de prendas vintage
         </p>
     </div>
 </section>
 
 <main class="px-6 py-10">
     <h1 class="text-4xl font-sans font-semibold mb-6 text-center">Explora nuestra colección de prendas vintage.</h1>
-    
+
     <form method="POST" action="{{ route('admin.garments.destroySelected') }}" id="deleteForm">
         @csrf
         @method('DELETE')
@@ -61,7 +62,7 @@
                 <button type="button"
                         onclick="confirmDelete()"
                         class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
-                    Eliminar seleccionadas
+                    Eliminar seleccionadas <span id="selected-count">(0)</span>
                 </button>
             @endif
 
@@ -77,11 +78,12 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($garments as $garment)
-                <div class="relative bg-[#FDF7F1] border border-[#F1E3D3] rounded-xl p-4 shadow hover:scale-105 transition duration-300 ease-in-out">
+                <div class="relative bg-[#FDF7F1] border border-[#F1E3D3] rounded-xl p-4 shadow hover:scale-105 transition duration-300 ease-in-out"
+                     data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
 
                     @if (!empty($deleteMode) && $deleteMode)
                         <input type="checkbox" name="garment_ids[]" value="{{ $garment->id }}"
-                               class="absolute top-2 right-2 w-5 h-5 text-red-600">
+                               class="absolute top-2 right-2 w-5 h-5 text-red-600 garment-checkbox">
                     @elseif (!empty($editMode) && $editMode)
                         <input type="checkbox" name="edit_garment_id" value="{{ $garment->id }}"
                                class="absolute top-2 right-2 w-5 h-5 text-blue-600 single-edit-checkbox">
@@ -155,6 +157,8 @@
 
     function redirectToEdit() {
         const selected = document.querySelector('.single-edit-checkbox:checked');
+        const editBtn = document.getElementById('editSelectedBtn');
+
         if (!selected) {
             Swal.fire({
                 icon: 'warning',
@@ -202,6 +206,18 @@
             }
         });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const garmentCheckboxes = document.querySelectorAll('.garment-checkbox');
+        const selectedCount = document.getElementById('selected-count');
+
+        garmentCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const count = document.querySelectorAll('.garment-checkbox:checked').length;
+                selectedCount.textContent = `(${count})`;
+            });
+        });
+    });
 </script>
 @endif
 
