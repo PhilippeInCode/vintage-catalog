@@ -11,28 +11,28 @@
 
     <div class="flex flex-col md:flex-row justify-center items-start gap-10 md:gap-16 mb-14 text-gray-900">
 
-      <div class="flex flex-col items-center max-w-[180px]">
+      <div class="card-animate flex flex-col items-center max-w-[180px]">
         <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/fzgutqbxu97ynwra61l5.png" alt="Mayor resistencia" class="h-24 mb-5">
         <p class="text-lg md:text-xl tracking-wide leading-snug text-center">
           Mayor resistencia<br>al desgaste
         </p>
       </div>
 
-      <div class="flex flex-col items-center max-w-[180px]">
+      <div class="card-animate flex flex-col items-center max-w-[180px]">
         <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/tosz6q6gnoiekj1oupxw.png" alt="Medio ambiente" class="h-24 mb-5">
         <p class="text-lg md:text-xl tracking-wide leading-snug text-center">
           Cuidado del<br>medio ambiente
         </p>
       </div>
 
-      <div class="flex flex-col items-center max-w-[180px]">
+      <div class="card-animate flex flex-col items-center max-w-[180px]">
         <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/ipuq22eylybgh9vy1zit.png" alt="Calidad" class="h-24 mb-5">
         <p class="text-lg md:text-xl tracking-wide leading-snug text-center">
           Prendas de<br>mejor calidad
         </p>
       </div>
 
-      <div class="flex flex-col items-center max-w-[180px]">
+      <div class="card-animate flex flex-col items-center max-w-[180px]">
         <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/sus8ih89nfapcfkycelz.png" alt="Derechos humanos" class="h-24 mb-5">
         <p class="text-lg md:text-xl tracking-wide leading-snug text-center">
           Respeto de los<br>derechos humanos

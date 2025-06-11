@@ -11,3 +11,11 @@
     border-top-right-radius: 200px;
   border-bottom-left-radius: 200px;
 }
+
+.card-animate {
+    transition: transform 0.3s ease;
+}
+
+.card-animate:hover {
+    transform: scale(1.03);
+}

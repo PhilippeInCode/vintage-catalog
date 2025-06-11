@@ -1,5 +1,6 @@
 <section class="text-black py-16 px-4 font-sans">
-  <div class="bg-orange px-8 py-12 max-w-7xl mx-auto rounded-tl-br-inverse relative overflow-hidden">
+  <div class="bg-orange px-8 py-12 max-w-7xl mx-auto rounded-tl-br-inverse relative overflow-hidden" data-aos="zoom-in-up">
+
     
     <h2 class="text-4xl md:text-5xl font-semibold tracking-widest text-center mb-8">
       Puede ponerse en contacto con nosotros <br>aquí
