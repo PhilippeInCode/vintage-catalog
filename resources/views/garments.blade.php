@@ -221,5 +221,7 @@
 </script>
 @endif
 
+    @include('partials.footer')
+
 </body>
 </html>
