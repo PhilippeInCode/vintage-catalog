@@ -46,13 +46,5 @@
 
     @include('partials.footer')
 
-    <script>
-        function updateCounter() {
-            const textarea = document.getElementById('message');
-            const counter = document.getElementById('charCount');
-            counter.textContent = `${textarea.value.length}/500`;
-        }
-    </script>
-
 </body>
 </html>
