@@ -8,7 +8,7 @@
         </button>
 
         <div class="flex space-x-6">
-            <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/tbc3ywtk2wbzfhky5wyx.png" 
+            <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1749019075/n-1_yshbsy.png" 
                  alt="Chaqueta 1"
                  class="w-40 md:w-48 lg:w-56 transform transition duration-300 hover:scale-105 cursor-pointer">
             <img src="https://res.cloudinary.com/dk1g12n2h/image/upload/v1747041147/nat2dawj3j4n0urvgbua.png" 
