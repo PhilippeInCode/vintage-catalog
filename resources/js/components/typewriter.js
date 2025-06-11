@@ -2,21 +2,32 @@ const text = "El legado de la moda permanente";
 let i = 0;
 let deleting = false;
 let target = document.getElementById("typing-text");
+let delay = 100;
+let pauseTime = 0;
 
 function typeEffect() {
     if (!target) return;
-    if (!deleting && i <= text.length) {
-        target.innerHTML = text.substring(0, i);
+
+    if (!deleting) {
+        target.innerHTML = text.substring(0, i + 1);
         i++;
-    } else if (deleting && i >= 0) {
-        target.innerHTML = text.substring(0, i);
+    } else {
+        target.innerHTML = text.substring(0, i - 1);
         i--;
     }
 
-    if (i === text.length) deleting = true;
-    if (i === 0) deleting = false;
+    if (i === text.length) {
+        deleting = true;
+        pauseTime = 2000;
+    }
+    else if (i === 0 && deleting) {
+        deleting = false;
+        pauseTime = 1000;
+    } else {
+        pauseTime = delay;
+    }
 
-    setTimeout(typeEffect, 100);
+    setTimeout(typeEffect, pauseTime);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
