@@ -19,3 +19,27 @@
 .card-animate:hover {
     transform: scale(1.03);
 }
+
+#cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(80, 60, 40, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out, background-color 0.3s ease;
+    mix-blend-mode: multiply;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#cursor-follower.pulse {
+    animation: pulse 1s infinite;
+}

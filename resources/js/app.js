@@ -8,3 +8,4 @@ import './components/typewriter';
 import './components/hoverCards';
 import './components/contactFormCounter';
 import './components/animations';
+import './components/cursor';

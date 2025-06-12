@@ -221,6 +221,8 @@
 </script>
 @endif
 
+    @include('partials.cursor')
+
     @include('partials.footer')
 
 </body>

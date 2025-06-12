@@ -16,6 +16,8 @@
         @include('partials.icons')
     </main>
 
+    @include('partials.cursor')
+
     @include('partials.footer')
 
 </body>

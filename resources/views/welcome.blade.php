@@ -23,5 +23,6 @@
 
     @include('partials.footer')
 
+    @include('partials.cursor')
 </body>
 </html>

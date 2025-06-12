@@ -63,6 +63,8 @@
         </section>
     </main>
 
+    @include('partials.cursor')
+
     @include('partials.footer')
 
 </body>

@@ -17,6 +17,8 @@
         @include('partials.vintage-classics')
         @include('partials.cta-values')
     </main>
+    
+    @include('partials.cursor')
 
     @include('partials.footer')
 
